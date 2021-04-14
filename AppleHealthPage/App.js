@@ -33,7 +33,7 @@ import {
 
 import HistorySection from './app/components/HistorySection';
 import Summary from './app/pages/Summary';
-import Browse from './app/pages/Browse';
+import BrowseContainer from './app/pages/Browse';
 
 //const HeartImage = require('./app/assets/heart.jpg');
 const onPress1 = () => {
@@ -48,7 +48,7 @@ function summary() {
   return <Summary></Summary>;
 }
 function browse() {
-  return <Browse></Browse>;
+  return <BrowseContainer></BrowseContainer>;
 }
 
 const Tab = createBottomTabNavigator();
@@ -74,7 +74,7 @@ function Tabs() {
       />
       <Tab.Screen
         name="Browse"
-        component={browse}
+        component={BrowseContainer}
         fontSize="16"
         options={{
           tabBarIcon: ({size, color}) => (
