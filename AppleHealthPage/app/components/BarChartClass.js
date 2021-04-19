@@ -55,19 +55,6 @@ class BarChartClass extends Component {
     });
   };
 
-  // constructor(props) {
-  //   super(props);
-
-  //   Obj = new Chart();
-  // }
-
-  // CallFunction_1 = () => {
-  //   Obj.Load_Week_Data();
-  // };
-
-  // CallFunction_2 = () => {
-  //   Obj.Load_Month_Data();
-  // };
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#E0E0E0'}}>
@@ -88,7 +75,7 @@ class BarChartClass extends Component {
         <View style={styles.sectionContainer}>
           <BarChart
             //style={styles.sectionContainer}
-            // style={graphStyle}
+
             data={this.state.data}
             width={ScreenWidth}
             height={500}

@@ -31,18 +31,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import HistorySection from './app/components/HistorySection';
 import Summary from './app/pages/Summary';
 import BrowseContainer from './app/pages/Browse';
-
-//const HeartImage = require('./app/assets/heart.jpg');
-const onPress1 = () => {
-  alert('clicked1');
-};
-
-const onPress2 = () => {
-  alert('clicked2');
-};
 
 function summary() {
   return <Summary></Summary>;

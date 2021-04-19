@@ -20,12 +20,7 @@ import BrowseSection from '../components/BrowseSection';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {
-  Activity,
-  ActivityContainer,
-  BarChartScreen,
-  LineChartScreen,
-} from './Activity';
+import {Activity, BarChartScreen, LineChartScreen} from './Activity';
 
 const FireImage = <Ionicons name="flame" size={25} color="#fc4503" />;
 const HeightImage = <Ionicons name="body" size={25} color="purple" />;
@@ -48,10 +43,6 @@ const onPress2 = () => {
 function updateSearch() {
   alert('Searched');
 }
-
-// const Activity = () => {
-//   return <ActivityContainer></ActivityContainer>;
-// };
 
 const Stack = createStackNavigator();
 
@@ -87,27 +78,18 @@ const Browse = () => {
         rightIconContainerStyle={{
           backgroundColor: '#E0E0E0',
         }}
-        containerStyle={
-          Platform.OS === 'android'
-            ? {
-                //flex: 1,
-                marginTop: 16,
-                justifyContent: 'center',
-                height: 58,
-                backgroundColor: '#E0E0E0',
-                size: 10,
-                shadowColor: 'white', //no effect
-                borderBottomColor: 'transparent',
-                borderTopColor: 'transparent',
-                borderLeftColor: 'transparent',
-              }
-            : {
-                //flex: 1,
-                justifyContent: 'center',
-                height: 49,
-                backgroundColor: '#E0E0E0',
-              }
-        }
+        containerStyle={{
+          //flex: 1,
+          marginTop: 16,
+          justifyContent: 'center',
+          height: 58,
+          backgroundColor: '#E0E0E0',
+          size: 10,
+          shadowColor: 'white', //no effect
+          borderBottomColor: 'transparent',
+          borderTopColor: 'transparent',
+          borderLeftColor: 'transparent',
+        }}
         placeholder="Type Here..."
         onChangeText={updateSearch}
       />

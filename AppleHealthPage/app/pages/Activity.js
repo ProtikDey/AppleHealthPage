@@ -19,7 +19,6 @@ import BrowseSection from '../components/BrowseSection';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {LineChart} from 'react-native-chart-kit';
-//import {useNavigation} from '@react-navigation/native';
 
 const FireImage = <Ionicons name="flame" size={25} color="#fc4503" />;
 const HeightImage = <Ionicons name="body" size={25} color="purple" />;
@@ -61,14 +60,6 @@ const barMonthData = {
   ],
 };
 
-const onPress1 = () => {
-  alert('clicked1');
-};
-
-const onPress2 = () => {
-  alert('clicked2');
-};
-
 function updateSearch() {
   alert('Searched');
 }
@@ -91,25 +82,6 @@ export const BarChartScreen = () => {
   );
 };
 
-const Stack = createStackNavigator();
-
-const StackNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Tweets" component={Tweets} />
-      <Stack.Screen name="Browse" component={Browse} />
-    </Stack.Navigator>
-  );
-};
-
-const OnPress3 = () => {
-  return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
-  );
-};
-
 export const Activity = () => {
   const {navigate} = useNavigation();
   return (
@@ -129,27 +101,18 @@ export const Activity = () => {
         rightIconContainerStyle={{
           backgroundColor: '#E0E0E0',
         }}
-        containerStyle={
-          Platform.OS === 'android'
-            ? {
-                //flex: 1,
-                marginTop: 16,
-                justifyContent: 'center',
-                height: 58,
-                backgroundColor: '#E0E0E0',
-                size: 10,
-                shadowColor: 'white', //no effect
-                borderBottomColor: 'transparent',
-                borderTopColor: 'transparent',
-                borderLeftColor: 'transparent',
-              }
-            : {
-                //flex: 1,
-                justifyContent: 'center',
-                height: 49,
-                backgroundColor: '#E0E0E0',
-              }
-        }
+        containerStyle={{
+          //flex: 1,
+          marginTop: 16,
+          justifyContent: 'center',
+          height: 58,
+          backgroundColor: '#E0E0E0',
+          size: 10,
+          shadowColor: 'white', //no effect
+          borderBottomColor: 'transparent',
+          borderTopColor: 'transparent',
+          borderLeftColor: 'transparent',
+        }}
         placeholder="Type Here..."
         onChangeText={updateSearch}
       />
@@ -157,58 +120,25 @@ export const Activity = () => {
       <ScrollView style={styles.container}>
         <BrowseSection
           Header="Active Energy"
-          //ImageSource="require('../assets/heart.jpg')"
-
           ImageSource={FireImage}
-          //navigation={navigation}>
-          //NextPage={Tweets}
-          onPress={() => navigate(LineChartScreen)}>
-          //onPress={onPress1}
-        </BrowseSection>
+          onPress={() => navigate(LineChartScreen)}></BrowseSection>
 
         <BrowseSection
           Header="Resting Energy"
-          //ImageSource="require('../assets/heart.jpg')"
-
           ImageSource={FireImage}
-          //navigation={navigation}>
-          //NextPage={Tweets}
-          //onPress={navigation.navigate({Tweets})}
           onPress={() => navigate(BarChartScreen)}></BrowseSection>
 
         <BrowseSection
           Header="Stand Minutes"
-          //ImageSource="require('../assets/heart.jpg')"
-
           ImageSource={FireImage}
-          //navigation={navigation}>
-          //NextPage={Tweets}
-          //onPress={navigation.navigate({Tweets})}
           onPress={() => navigate(BarChartScreen)}></BrowseSection>
 
         <BrowseSection
           Header="Steps"
-          //ImageSource="require('../assets/heart.jpg')"
-
           ImageSource={HeightImage}
-          //navigation={navigation}>
-          //NextPage={Tweets}
-          //onPress={navigation.navigate({Tweets})}
           onPress={() => navigate(BarChartScreen)}></BrowseSection>
       </ScrollView>
     </SafeAreaView>
-  );
-};
-
-const ActivityContainer = () => {
-  return (
-    //<NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Activity" component={Activity} />
-      <Stack.Screen name="LineChartScreen" component={LineChartScreen} />
-      <Stack.Screen name="BarChartScreen" component={BarChartScreen} />
-    </Stack.Navigator>
-    //</NavigationContainer>
   );
 };
 
@@ -261,7 +191,3 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
-
-export default ActivityContainer;
-
-//export default OnPress3;
